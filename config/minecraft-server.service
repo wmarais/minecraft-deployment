@@ -1,0 +1,18 @@
+#https://www.freedesktop.org/software/systemd/man/systemd.unit.html
+[Unit]
+Description=Minecraft Server
+After=multi-user.target
+
+[Service]
+Type=oneshot
+User=minecraft
+Group=minecraft
+RemainAfterExit=True
+WorkingDirectory=/opt/minecraft-server
+ExecStart=/opt/minecraft-server/minecraft-server-ctrl.sh start
+ExecReload=/opt/minecraft-server/minecraft-server-ctrl.sh restart
+ExecStop=/opt/minecraft-server/minecraft-server-ctrl.sh stop
+#Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
