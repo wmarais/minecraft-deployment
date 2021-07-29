@@ -29,7 +29,7 @@ chown ${RUN_USER}:${RUN_GROUP} -R ${INSTALL_DIR}
 
 # Install the service script
 ln -s ${INSTALL_DIR}/${SERVICE_NAME} ${SERVICE_PATH}/${SERVICE_NAME}
-chown root:root ${SERVICE_PATH}/${SERVICE_NAME}
-chmod 660 ${SERVICE_PATH}/${SERVICE_NAME}
+chown root:root ${INSTALL_DIR}/${SERVICE_NAME}
+chmod 660 ${INSTALL_DIR}/${SERVICE_NAME}
 systemctl enable ${SERVICE_NAME}
 
